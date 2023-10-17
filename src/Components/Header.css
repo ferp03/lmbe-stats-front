@@ -1,0 +1,44 @@
+.App-header {
+    background-color: #282c34;
+    height: 60px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.Header-text{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    align-self: center;
+}
+
+.App-logo {
+    height: 50px;
+    pointer-events: none;
+}
+
+.Menu{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    background-color: #282C34;
+}
+
+.Menu-container{
+    margin-left: auto;
+}
+
+.Home-Button,
+.Equipos-Button, .Contacto-Button {
+    margin: 0 10px;
+    background-color: #2c2c2c;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+}
+
