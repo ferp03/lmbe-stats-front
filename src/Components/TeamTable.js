@@ -9,7 +9,7 @@ const TeamTable = ({ teamName }) => {
 
     useEffect(() => {
         // Fetch the JSON data from the server for the specified team
-        fetch(`http://localhost:8000/api/getData?team=${teamName}`)
+        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=${teamName}`)
         .then(response => response.json())
         .then(data => setData(data.values));
     }, [teamName]);

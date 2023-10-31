@@ -11,7 +11,7 @@ const SiderTeams = memo(function SiderTeams() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/getSheets", {
+    fetch("https://lmbe-stats.uc.r.appspot.com/api/getSheets", {
       method: "GET",
     })
       .then((response) => response.json())
