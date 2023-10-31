@@ -34,7 +34,7 @@ const TeamTable = ({ teamName }) => {
                 </div>
                 <div>
                     <p><strong>APP:</strong> Asistencias por partido</p>
-                    <p><strong>TPP:</strong> Tiros de 3 por partido</p>
+                    <p><strong>TPP:</strong> Triples por partido</p>
                 </div>
             </div>
         </div>
