@@ -1,0 +1,9 @@
+runtime: python312
+env: standard
+
+handlers:
+  - url: /static
+    static_dir: build/static
+
+  - url: /.*
+    script: auto

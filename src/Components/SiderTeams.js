@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { Layout, Menu } from "antd";
 import { useNavigate } from "react-router-dom";
 
 
 const { Sider } = Layout;
 
-function SiderTeams() {
+const SiderTeams = memo(function SiderTeams() {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ function SiderTeams() {
         }
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching data en sider:", error);
       });
   }, []);
 
@@ -41,13 +41,13 @@ function SiderTeams() {
         }}
       >
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline">
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={[window.location.pathname]}>
           {items.map((item) => (
             <Menu.Item
+              key = {item}
               onClick={() =>{
                 navigate(`/equipos/${item}`)}   
               } 
-              defaultSelectedKeys = {[window.location.pathname]}
             >
               <p style = {{background: "#fffff", fontWeight: "semibold"}}>{item}</p>
             </Menu.Item>
@@ -56,6 +56,6 @@ function SiderTeams() {
       </Sider>
     </Layout>
   );
-}
+});
 
 export default SiderTeams;

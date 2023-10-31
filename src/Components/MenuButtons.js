@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import './Header.css'
 
-function Menu(){
+function MenuButtons(){
     return(
         <Content className='Menu'>
             <Link to="/">
@@ -18,4 +18,4 @@ function Menu(){
         </Content>
     );
 }
-export default Menu;
+export default MenuButtons;

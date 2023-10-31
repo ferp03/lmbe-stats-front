@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from 'antd'; 
 import './Header.css';
-import Menu from './Menu';
+import MenuButtons from './MenuButtons';
 import Logo from '../Logo LMBE.png'
 import { Link } from 'react-router-dom';
 
@@ -11,9 +11,9 @@ function App_Header(){
         <div className="App">
         <header className="App-header">
             <Link to = "/"><img src={Logo} className="App-logo" alt="logo" /></Link>
-            <text className="Header-text"> Liga Básquetbol Monterrey Elite</text>
+            <p className="Header-text"> Liga Básquetbol Monterrey Elite</p>
             <div className="Menu-container">
-                <Menu />
+                <MenuButtons />
             </div>
         </header>
         </div>

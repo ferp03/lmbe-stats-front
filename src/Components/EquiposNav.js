@@ -40,13 +40,13 @@ function EquiposNav() {
         }}
       >
         <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline">
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={[window.location.pathname]}>
           {items.map((item) => (
             <Menu.Item
+              key = {item}
               onClick={() =>{
                 navigate(`/equipos/${item}`)}   
               } 
-              defaultSelectedKeys = {[window.location.pathname]}
             >
               <p style = {{background: "#fffff", fontWeight: "semibold"}}>{item}</p>
             </Menu.Item>
