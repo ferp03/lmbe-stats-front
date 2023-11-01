@@ -6,6 +6,7 @@ import SiderTeams from './Components/SiderTeams';
 import Home from './Home';
 import AppHeader from './Components/Header';
 import TeamTable from './Components/TeamTable';
+import GeneralTable from './Components/GeneralTable';
 import { useParams } from 'react-router-dom';
 
 
@@ -33,7 +34,11 @@ function EquiposRoutes() {
 
 function Team(){
   let {teamName} = useParams();
-  return <TeamTable teamName={teamName} />
+  if(teamName === "TABLA"){
+    return <GeneralTable teamName={teamName} />
+  }else{
+    return <TeamTable teamName={teamName} />
+  }
 }
 
 export default App;
