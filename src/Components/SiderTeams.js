@@ -30,14 +30,14 @@ const SiderTeams = memo(function SiderTeams() {
   return (
     <Layout hasSider>
       <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
         style={{
-          overflow: "auto",
           height: "100vh",
           position: "absolute",
           left: 0,
           top: "60px",
-          width: "200px",
-          collapsedWidth: "80px",
+          width: "200px", //No usar pixeles
         }}
       >
         <div className="demo-logo-vertical" />

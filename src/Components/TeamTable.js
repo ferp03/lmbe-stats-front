@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'antd';
+import { Empty, Table } from 'antd';
 import { Layout } from 'antd';
 
 const { Footer } = Layout;
@@ -43,7 +43,12 @@ const TeamTable = ({ teamName }) => {
 
     return (
         <div>
-            <Table dataSource={data} columns={columns} style={{ marginLeft: '200px', width: 'calc(100% - 200px)' }} />
+            <Table 
+            dataSource={data} columns={columns} 
+            pagination={data.length > 10 ? { position: ["bottomRight"] } : false}
+            locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
+            style={{ marginLeft: '200px', width: 'calc(100% - 200px)' }} /> 
+            {/* editar para que los margins sean responsivos de acuerdo con el tamaño de la pantalla (CSS) */}
             <Footer style={{ textAlign: 'center' }}> <Significados /> </Footer>
         </div>
     );

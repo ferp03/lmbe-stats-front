@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "antd";
+import { Empty, Table } from "antd";
 import { Layout } from "antd";
 
 const { Footer } = Layout;
@@ -45,7 +45,11 @@ const GeneralTable = ({ teamName }) => {
 
     return(
         <div>
-            <Table dataSource={data} columns={columns} style = {{ marginLeft: '200px', width: 'calc(100% - 200px)'}} />
+            <Table 
+            dataSource={data} columns={columns} 
+            locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
+            style = {{ marginLeft: '200px', width: 'calc(100% - 200px)'}} />
+            {/* Corregir margins, no usar pixeles */}
             <Footer style = {{ textAlign: 'center '}}> <SignificadosGeneral /> </Footer>
         </div>
     )

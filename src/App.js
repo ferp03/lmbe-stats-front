@@ -26,6 +26,7 @@ function App() {
 function EquiposRoutes() {
   return (
     <Routes>
+      {/* Esta renderizando el siderTeams y Equipos nav. Buscar solo tener un sider y cambiar solo el contenido */}
       <Route path="/" element={<EquiposNav />} />
       <Route path=":teamName" element={<Team />} />
     </Routes>
