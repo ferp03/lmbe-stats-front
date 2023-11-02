@@ -1,88 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Layout, Menu, theme } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Layout, theme } from "antd";
+import './Components.css';
 
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer} = Layout;
+
 
 function EquiposNav() {
-  const [items, setItems] = useState([]);
-  const navigate = useNavigate();
-
-
-  useEffect(() => {
-    fetch("https://lmbe-stats.uc.r.appspot.com/api/getSheets", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.sheets) {
-          setItems(data.sheets);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, []);
-
-
   return (
-    <Layout hasSider>
-      <Sider
-        style={{
-          overflow: "auto",
-          height: "100vh",
-          position: "absolute",
-          left: 0,
-          top: "60px",
-          width: "200px",
-          collapsedWidth: "80px",
-        }}
-      >
-        <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[window.location.pathname]}>
-          {items.map((item) => (
-            <Menu.Item
-              key = {item}
-              onClick={() =>{
-                navigate(`/equipos/${item}`)}   
-              } 
-            >
-              <p style = {{background: "#fffff", fontWeight: "semibold"}}>{item}</p>
-            </Menu.Item>
-          ))}
-        </Menu>
-      </Sider>
-      <TeamContent />
-    </Layout>
-  );
-}
-
-function TeamContent() {
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
-  return (
-    <Layout
-      className="site-layout"
-      style={{
-        marginLeft: 200,
-      }}
-    >
-      <Header
-        style={{
-          padding: 0,
-          background: colorBgContainer,
-        }}
-      />
+    <Layout>
       {/* contenido de la pagina */}
       <ContentPrincipal />
 
-      <Footer
-        style={{
-          textAlign: "center",
-        }}
-      >
+      <Footer className="footer">
         LMBE STATS
       </Footer>
     </Layout>
@@ -94,7 +23,7 @@ function ContentPrincipal() {
     token: { colorBgContainer },
   } = theme.useToken();
   return (
-    <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+    <Content className="container">
       <div
         style={{
           padding: 24,
@@ -102,7 +31,6 @@ function ContentPrincipal() {
           background: colorBgContainer,
         }}
       >
-        {/* //Aqui empieza el contenido de la pagina */}
         Aqui digo dq que onda estos son nuestros equipos, encontraras informacion de estadistica por cada jugador de cada equipo
       </div>
     </Content>

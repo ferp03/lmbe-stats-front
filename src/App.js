@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="contacto" element={<div>Contacto</div>} />
-        <Route path="/equipos/*" element={<div> <SiderTeams /> <EquiposRoutes /> </div>} />
+        <Route path="/equipos/*" element={<div style={{display: "flex"}} > <SiderTeams /> <EquiposRoutes /> </div>} />
       </Routes>
     </Router>
   );
@@ -26,7 +26,6 @@ function App() {
 function EquiposRoutes() {
   return (
     <Routes>
-      {/* Esta renderizando el siderTeams y Equipos nav. Buscar solo tener un sider y cambiar solo el contenido */}
       <Route path="/" element={<EquiposNav />} />
       <Route path=":teamName" element={<Team />} />
     </Routes>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from "react";
 import { Layout, Menu } from "antd";
 import { useNavigate } from "react-router-dom";
-
+import "./Components.css";
 
 const { Sider } = Layout;
 
@@ -32,18 +32,13 @@ const SiderTeams = memo(function SiderTeams() {
       <Sider
       breakpoint="lg"
       collapsedWidth="0"
-        style={{
-          height: "100vh",
-          position: "absolute",
-          left: 0,
-          top: "60px",
-          width: "200px", //No usar pixeles
-        }}
+      className="sider"
       >
-        <div className="demo-logo-vertical" />
+        <div/>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={[window.location.pathname]}>
           {items.map((item) => (
             <Menu.Item
+            className="sider-item"
               key = {item}
               onClick={() =>{
                 navigate(`/equipos/${item}`)}   

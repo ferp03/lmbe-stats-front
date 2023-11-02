@@ -18,4 +18,5 @@ function MenuButtons(){
         </Content>
     );
 }
+
 export default MenuButtons;

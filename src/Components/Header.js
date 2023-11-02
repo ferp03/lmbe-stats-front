@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom';
 function App_Header(){
     return(
         <Layout>
-        <div className="App">
-        <header className="App-header">
-            <Link to = "/"><img src={Logo} className="App-logo" alt="logo" /></Link>
-            <p className="Header-text"> Liga Básquetbol Monterrey Elite</p>
-            <div className="Menu-container">
-                <MenuButtons />
-            </div>
-        </header>
+        <div>
+            <header className="App-header">
+                <Link to = "/"><img src={Logo} className="App-logo" alt="logo" /></Link>
+                <p className="Header-text"> Liga Básquetbol Monterrey Elite</p>
+                <div className="Menu-container">
+                    <MenuButtons />
+                </div>
+            </header>
         </div>
         </Layout>
     );
