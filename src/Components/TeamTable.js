@@ -47,7 +47,7 @@ const TeamTable = ({ teamName }) => {
             dataSource={data} columns={columns} 
             pagination={data.length > 10 ? { position: ["bottomRight"] } : false}
             locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
-            style={{ marginLeft: '200px', width: 'calc(100% - 200px)' }} /> 
+            style={{ minWidth: "100vh" }} /> 
             {/* editar para que los margins sean responsivos de acuerdo con el tamaño de la pantalla (CSS) */}
             <Footer style={{ textAlign: 'center' }}> <Significados /> </Footer>
         </div>

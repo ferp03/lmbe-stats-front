@@ -1,10 +1,12 @@
 .App-header {
     background-color: #282c34;
-    height: 60px;
+    height: 8vh;
     padding: 10px;
-    width: 100%;
+    min-width: 100vw;
+    align-items: center;
     display: flex;
     color: white;
+    border: 1px solid blueviolet;
 }
 
 .Header-text{
@@ -12,11 +14,14 @@
     font-size: min(2vw, 20px);
     font-weight: bold;
     align-self: center;
+    border: 1px solid yellow;
 }
 
 .App-logo {
-    height: 50px;
+    height: 60px;
     pointer-events: none;
+    border: 1px solid yellow;
+    padding: 5%;
 }
 
 .Menu-container{
@@ -24,11 +29,14 @@
 }
 
 .Menu{
+    margin-top: 0;
     display: flex;
     flex-direction: row;
     max-width: 100vw;
+    height: 60px;
     padding: 5px;
     background-color: #282C34;
+    color: rgb(255, 255, 255);
     border: 1px solid red;
 }
 
@@ -36,7 +44,8 @@
 .Home-Button,
 .Equipos-Button, .Contacto-Button {
     margin: 0 10px;
-    background-color: #2c2c2c;
+    /* background-color: #2c2c2c; */
+    background-color: red;
     color: rgb(255, 255, 255);
     font-weight: bold;
     padding: 10px 20px;
@@ -45,3 +54,20 @@
     border-radius: 30px;
 }
 
+@media (max-width: 500px){
+    .Header-Menu{
+        display: none;
+    }
+    .Menu-Icon{
+        displaY: block;
+    }
+}
+
+@media (min-width: 500px){
+    .Menu-Icon{
+        display: none;
+    }
+    .Header-Menu{
+        display: block;
+    }
+}
