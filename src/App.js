@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import './App.css';
 import EquiposRoot from './Components/EquiposRoot';
 import SiderTeams from './Components/SiderTeams';
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="contacto" element={<div>Contacto</div>} />
-        <Route path="/equipos/*" element={<div className='TeamsContainer' > <SiderTeams /> <EquiposRoutes /> </div>} />
+        <Route path="/equipos/*" element={ <div className='TeamsContainer'> <SiderTeams equiposRoutes={EquiposRoutes} /> </div>} />
       </Routes>
     </Router>
   );

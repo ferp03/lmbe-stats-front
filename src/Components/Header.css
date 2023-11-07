@@ -55,7 +55,7 @@
         display: none;
     }
     .Menu-Icon{
-        displaY: block;
+        displaY: flex;
     }
 }
 
@@ -64,6 +64,6 @@
         display: none;
     }
     .Header-Menu{
-        display: block;
+        display: flex;
     }
 }

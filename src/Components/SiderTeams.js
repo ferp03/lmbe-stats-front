@@ -3,9 +3,9 @@ import { Layout, Menu } from "antd";
 import { useNavigate } from "react-router-dom";
 import "./Components.css";
 
-const { Sider } = Layout;
+const { Sider, Content } = Layout;
 
-const SiderTeams = memo(function SiderTeams() {
+const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const SiderTeams = memo(function SiderTeams() {
 
 
   return (
-    <Layout hasSider>
+    <Layout>
       <Sider
       breakpoint="lg"
       collapsedWidth="0"
@@ -49,6 +49,9 @@ const SiderTeams = memo(function SiderTeams() {
           ))}
         </Menu>
       </Sider>
+      <Content>
+        <EquiposRoutes.equiposRoutes />
+      </Content>
     </Layout>
   );
 });

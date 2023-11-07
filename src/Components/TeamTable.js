@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Empty, Table } from 'antd';
 import { Layout } from 'antd';
 import './Components.css';
+import SiderTeams from './SiderTeams';
 
 const { Footer } = Layout;
 
