@@ -9,6 +9,7 @@ import TeamTable from './Components/TeamTable';
 import GeneralTable from './Components/GeneralTable';
 import { useParams } from 'react-router-dom';
 import "./Components/Components.css";
+import NotFound from './NotFound';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="contacto" element={<div>Contacto</div>} />
         <Route path="/equipos/*" element={ <div className='TeamsContainer'> <SiderTeams equiposRoutes={EquiposRoutes} /> </div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
@@ -29,6 +31,7 @@ function EquiposRoutes() {
     <Routes>
       <Route path="/" element={<EquiposRoot />} />
       <Route path=":teamName" element={<Team />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
