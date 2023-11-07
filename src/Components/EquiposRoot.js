@@ -5,12 +5,13 @@ import './Components.css';
 const { Content, Footer} = Layout;
 
 
-function EquiposNav() {
+function EquiposRoot() {
   return (
-    <Layout>
+    <Layout
+    className="TeamTable"
+    >
       {/* contenido de la pagina */}
       <ContentPrincipal />
-
       <Footer className="footer">
         LMBE STATS
       </Footer>
@@ -37,4 +38,4 @@ function ContentPrincipal() {
   );
 }
 
-export default EquiposNav;
+export default EquiposRoot;

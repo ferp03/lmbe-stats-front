@@ -6,12 +6,11 @@ import './Header.css'
 
 function NavBar(){
     const [openMenu, setOpenMenu] = useState(false);
-
     return(
         <div>
             <div className='Menu-Icon'>
                 <MenuOutlined 
-                style={{height: 60}}
+                style={{height: 60, padding: 8}}
                 onClick={() => {setOpenMenu(true);}}
                 />
             </div>
@@ -25,7 +24,7 @@ function NavBar(){
             bodyStyle={{backgroundColor: "#282C34"}}
             placement='right'
             >
-                <Buttons />
+                <Buttons inLine/>
             </Drawer>
         </div>
     );
@@ -64,6 +63,4 @@ function Buttons({inLine=false}){
     );
 }
 
-
 export default NavBar;
-

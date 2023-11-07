@@ -1,32 +1,41 @@
-.container{
+/* .container{
     padding-right: 5%;
     padding-left: 5%;
     padding-top: 20%;
     height: 100vh;
     left: 0;
     z-index: 0;
-    border: 10px solid red;
     max-width: 100%;
+} */
+
+.TeamsContainer{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    border: 1px solid red;
 }
 
-.sider{
+/* .sider{
     height: "100vh";
     position: "absolute";
     left: 0;
     top: "60px";
     max-width: "20vw";
     z-index: 1;
-    border: 10px solid red;
+    border: 5px solid yellow;
+} */
+
+.TeamTable{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-grow: 1;
+    box-sizing: border-box;
+    border: 1px solid red;
 }
 
-.sider-item{
-
-}
-.footer{
+/* .footer{
     text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
-    border: 10px solid red;
-}
+} */

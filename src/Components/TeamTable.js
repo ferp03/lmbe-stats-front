@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Empty, Table } from 'antd';
 import { Layout } from 'antd';
+import './Components.css';
 
 const { Footer } = Layout;
 
@@ -44,12 +45,15 @@ const TeamTable = ({ teamName }) => {
     return (
         <div>
             <Table 
+            className='TeamTable'
             dataSource={data} columns={columns} 
             pagination={data.length > 10 ? { position: ["bottomRight"] } : false}
             locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
-            style={{ minWidth: "100vh" }} /> 
+            scroll={{x:'max-content'}}
+            style={{ margin: 0, padding: 0, width: '100%' }}
+            /> 
             {/* editar para que los margins sean responsivos de acuerdo con el tamaño de la pantalla (CSS) */}
-            <Footer style={{ textAlign: 'center' }}> <Significados /> </Footer>
+            <Footer style={{ textAlign: 'center', border: '1px solid red'}}> <Significados /> </Footer>
         </div>
     );
 };
