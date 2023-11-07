@@ -50,6 +50,7 @@ const GeneralTable = ({ teamName }) => {
             className="TeamTable"
             dataSource={data} columns={columns} 
             locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
+            scroll={{x:'max-content'}}
             />
             {/* Corregir margins, no usar pixeles */}
             <Footer style = {{ textAlign: 'center '}}> <SignificadosGeneral /> </Footer>
