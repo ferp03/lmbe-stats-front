@@ -29,6 +29,7 @@
 .TeamTable{
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 2rem;
     flex-grow: 1;
     box-sizing: border-box;
 }

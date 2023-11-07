@@ -49,6 +49,7 @@ const GeneralTable = ({ teamName }) => {
             <Table 
             className="TeamTable"
             dataSource={data} columns={columns} 
+            pagination={data.length > 11 ? { position: ["bottomRight"] } : false}
             locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
             scroll={{x:'max-content'}}
             />
