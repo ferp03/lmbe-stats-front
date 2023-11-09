@@ -1,11 +1,12 @@
-import { React } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function NotFound() {
+export default function FuncNotFound() {
     return(
         <div>
             <h1>Equipo no seleccionado</h1>
             <p>No se pudo recuperar la información correctamente.</p>
-            <Link href="https://lmbe-stats-front.uc.r.appspot.com"> Regresar a la página principal </Link>
+            <Link to="/"> Regresar a la página principal </Link>
         </div>
     );
 }

@@ -50,7 +50,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
         </Menu>
       </Sider>
       <Content>
-        <EquiposRoutes.equiposRoutes />
+        <EquiposRoutes.EquiposRoutes />
       </Content>
     </Layout>
   );

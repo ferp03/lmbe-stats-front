@@ -5,9 +5,10 @@ handlers:
     static_files: build/index.html
     upload: build/index.html
 
-  - url: /(.*)
+  - url: /(.*\.(json|ico|js|css))
     static_files: build/\1
-    upload: build/(.*)
+    upload: build/(.*\.(json|ico|js|css))
 
   - url: /.*
-    static_dir: build
+    static_files: build/index.html
+    upload: build/index.html
