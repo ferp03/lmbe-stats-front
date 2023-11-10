@@ -12,3 +12,5 @@ The Flask server processes the data retrieved from a Google Sheets that is acces
 ## Where is hosted?
 The web app is hosted in Google Cloud by using App Engine. You can find the app in the following URL:
 https://lmbe-stats-front.uc.r.appspot.com
+
+## Languages and Frameworks
