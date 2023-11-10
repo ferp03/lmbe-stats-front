@@ -1,5 +1,5 @@
 import { Menu, Drawer } from 'antd'; 
-import { MenuOutlined } from '@ant-design/icons';
+import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Header.css'
@@ -9,8 +9,9 @@ function NavBar(){
     return(
         <div>
             <div className='Menu-Icon'>
+                <p className='Header-text'>Menu</p>
                 <MenuOutlined 
-                style={{height: 60, padding: 8}}
+                style={{height: "8vh", padding: 8, alignSelf: 'center'}}
                 onClick={() => {setOpenMenu(true);}}
                 />
             </div>
@@ -19,9 +20,10 @@ function NavBar(){
             </span>
             <Drawer 
             open= {openMenu}
-            onClose={() => {setOpenMenu(false);}}
             closable={false}
-            bodyStyle={{backgroundColor: "#282C34"}}
+            onClose={() => {setOpenMenu(false);}}
+            styles={{body: {backgroundColor: "#282c34"}, header: {backgroundColor: "#282c34"}}}
+            width={205}
             placement='right'
             >
                 <Buttons inLine/>
@@ -51,11 +53,14 @@ function Buttons({inLine=false}){
     ]
     return(
         <Menu 
-            style={{backgroundColor: "#282C34", color: "white", fontWeight: "bold"}}
+            style={{backgroundColor: "#282c34", color: "white", fontWeight: "bold", border: "none"}}
             mode={inLine ? "inline" : "horizontal"}
         >
             {items.map(item => (
-                <Menu.Item key={item.key}>
+                <Menu.Item
+                key={item.key}
+                style={{textAlign: "right"}}
+                >
                     <Link to={item.link}>{item.label}</Link>
                 </Menu.Item>
             ))}
