@@ -1,13 +1,15 @@
 import React, { useState, useEffect, memo } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import "./Components.css";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 
 const { Sider, Content } = Layout;
 
 const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
+  const [collapsed, setCollapsed] = useState(false);
 
 
   useEffect(() => {
@@ -30,12 +32,19 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
   return (
     <Layout>
       <Sider
+      trigger={null}
+      collapsible collapsed={collapsed}
       breakpoint="lg"
       collapsedWidth="0"
-      className="sider"
+      style={{backgroundColor: "#282c34", height: "100%"}}
       >
         <div/>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[window.location.pathname]}>
+        <Menu 
+        theme="dark"
+        style={{backgroundColor: "#282c34", color: "white", border: "none"}}
+        mode="inline" 
+        defaultSelectedKeys={[window.location.pathname]}
+        >
           {items.map((item) => (
             <Menu.Item
             className="sider-item"
@@ -49,6 +58,12 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
           ))}
         </Menu>
       </Sider>
+      <Button 
+        type="text"
+        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+        onClick={() => setCollapsed(!collapsed)}
+        title="Ver equipos"
+      />
       <Content>
         <EquiposRoutes.EquiposRoutes />
       </Content>
