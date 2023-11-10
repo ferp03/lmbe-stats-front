@@ -14,3 +14,14 @@ The web app is hosted in Google Cloud by using App Engine. You can find the app 
 https://lmbe-stats-front.uc.r.appspot.com
 
 ## Languages and Frameworks
+### Languages
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+### Frameworks
+- Ant Design
+- Google Cloud
+- App Engine
+- Google Sheets API
