@@ -1,7 +1,7 @@
 import React from "react";
 import './Header.css';
 import NavBar from "./NavBar";
-import Logo from '../Logo LMBE.png'
+import Logo from '../logoLMBE.png'
 import { Link } from 'react-router-dom';
 
 function App_Header(){
