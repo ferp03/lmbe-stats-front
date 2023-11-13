@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Empty, Table } from 'antd';
 import { Layout } from 'antd';
 import './Components.css';
-import SiderTeams from './SiderTeams';
 
 const { Footer } = Layout;
 
@@ -48,7 +47,7 @@ const TeamTable = ({ teamName }) => {
             <Table 
             className='TeamTable'
             dataSource={data} columns={columns} 
-            pagination={data.length > 10 ? { position: ["bottomRight"] } : false}
+            pagination={data.length > 11 ? { position: ["bottomRight"] } : false}
             locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
             scroll={{x:'max-content'}}
             
