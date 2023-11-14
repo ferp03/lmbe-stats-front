@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Empty, Table } from "antd";
 import { Layout } from "antd";
 import "./Components.css";
@@ -13,6 +13,25 @@ const GeneralTable = ({ teamName }) => {
         .then(response => response.json())
         .then(data => setData(data.values));
     }, [teamName]);
+    
+    const containerRef = useRef(null);
+    const [shouldPaginate, setShouldPaginate] = useState(false);
+    
+    useEffect(() => {
+        const handleResize = () => {
+            if(containerRef.current){
+                setShouldPaginate(containerRef.current.offsetWidth < 382);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    
+    })
 
     const columns = [
         { title: "Posicion", dataIndex: 0 },
@@ -45,12 +64,16 @@ const GeneralTable = ({ teamName }) => {
     }
 
     return(
-        <div>
+        <div ref = {containerRef}>
             <Table 
             className="TeamTable"
             dataSource={data} columns={columns} 
-            pagination={data.length > 11 ? { position: ["bottomRight"] } : false}
-            locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
+            pagination={
+                shouldPaginate 
+                    ? { position: ["bottomRight"], pageSize: 8 } 
+                    : false
+            }
+            locale={{emptyText: <Empty description="Recuperando información..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
             scroll={{x:'max-content'}}
             />
             {/* Corregir margins, no usar pixeles */}
