@@ -1,5 +1,5 @@
 import { Menu, Drawer } from 'antd'; 
-import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
+import { MenuOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Header.css'

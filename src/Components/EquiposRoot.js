@@ -8,12 +8,15 @@ const { Content, Footer} = Layout;
 function EquiposRoot() {
   return (
     <Layout
-    className="TeamTable"
+    className="LayoutTables"
     >
       {/* contenido de la pagina */}
       <ContentPrincipal />
-      <Footer className="footer">
-        LMBE STATS
+      <Footer
+      style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <div>
+          <p>LMBE STATS</p>
+        </div>
       </Footer>
     </Layout>
   );

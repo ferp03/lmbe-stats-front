@@ -11,32 +11,31 @@
 .TeamsContainer{
     display: flex;
     justify-content: flex-start;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-
 }
 
-/* .sider{
-    height: "100vh";
-    position: "absolute";
-    left: 0;
-    top: "60px";
-    max-width: "20vw";
-    z-index: 1;
-    border: 5px solid yellow;
-} */
-
-.TeamTable{
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 2rem;
-    flex-grow: 1;
-    box-sizing: border-box;
+.LayoutTables{
+    display: flex;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    height: 100vh;
 }
 
-.footer{
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+.Tables{
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.footer-column{
+    display: flex;
+    flex-direction: column;
 }

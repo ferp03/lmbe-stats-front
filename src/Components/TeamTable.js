@@ -3,7 +3,6 @@ import { Empty, Table } from 'antd';
 import { Layout } from 'antd';
 import './Components.css';
 
-const { Footer } = Layout;
 
 const TeamTable = ({ teamName }) => {
     const [data, setData] = useState([]);
@@ -24,37 +23,37 @@ const TeamTable = ({ teamName }) => {
         { title: 'TPP', dataIndex: 5 },
     ];
 
-    const Significados = () =>{
+    const Footercillo = () =>{
         return(
-            <div>
-            <p><strong>PJ:</strong> Partidos jugados</p>
-            <div style={{ columnCount: 2 }}>
-                <div>
-                    <p><strong>PPP:</strong> Puntos por partido</p>
-                    <p><strong>RPP:</strong> Rebotes por partido</p>
+            <footer className='Footer'>
+                <div className='footer-column'>
+                    <small><strong>PJ:</strong> Partidos jugados</small>
+                    <small><strong>PPP:</strong> Puntos por partido</small>
                 </div>
-                <div>
-                    <p><strong>APP:</strong> Asistencias por partido</p>
-                    <p><strong>TPP:</strong> Triples por partido</p>
+                <div className='footer-column'>
+                    <small><strong>RPP:</strong> Rebotes por partido</small>
                 </div>
-            </div>
-        </div>
+                <div className='footer-column'>
+                    <small><strong>APP:</strong> Asistencias por partido</small>
+                    <small><strong>TPP:</strong> Triples por partido</small>
+                </div>
+            </footer>
         )
     }
 
     return (
-        <div>
+        <Layout
+        className='LayoutTables'>
             <Table 
-            className='TeamTable'
+            className='Tables'
             dataSource={data} columns={columns} 
-            pagination={data.length > 11 ? { position: ["bottomRight"] } : false}
-            locale={{emptyText: <Empty description="Fetching data..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
-            scroll={{x:'max-content'}}
-            
-            /> 
+            pagination={false}
+            locale={{emptyText: <Empty description="Recuperando información..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
+            scroll={{x: "max-content"}}
+            />
+            <Footercillo />
             {/* editar para que los margins sean responsivos de acuerdo con el tamaño de la pantalla (CSS) */}
-            <Footer style={{ textAlign: 'center'}}> <Significados /> </Footer>
-        </div>
+        </Layout>
     );
 };
 
