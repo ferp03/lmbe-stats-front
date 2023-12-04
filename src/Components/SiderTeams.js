@@ -9,7 +9,7 @@ const { Sider, Content } = Layout;
 const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
 
   useEffect(() => {
@@ -30,7 +30,8 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
 
 
   return (
-    <Layout>
+    <Layout
+    style={{height: "100hv"}}>
       <Sider
       trigger={null}
       collapsible collapsed={collapsed}
