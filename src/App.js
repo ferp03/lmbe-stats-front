@@ -15,20 +15,13 @@ import FuncNotFound from './NotFound';
 function App() {
   return (
     <Router>
-      <div>
-        <div>
-          <AppHeader />
-        </div>
-
-        <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="contacto" element={<div>Contacto</div>} />
-            <Route path="/equipos/*" element={ <div className='TeamsContainer'> <SiderTeams EquiposRoutes={EquiposRoutes} /> </div>} />
-            <Route path="*" element={<FuncNotFound />} />
-          </Routes>
-        </div>
-      </div>
+      <AppHeader />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="contacto" element={<div>Contacto</div>} />
+        <Route path="/equipos/*" element={ <div className='TeamsContainer'> <SiderTeams EquiposRoutes={EquiposRoutes}/> </div>} />
+        <Route path="*" element={<FuncNotFound />} />
+      </Routes>
     </Router>
   );
 }
