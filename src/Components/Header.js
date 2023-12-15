@@ -2,9 +2,9 @@ import React from "react";
 import './Header.css';
 import NavBar from "./NavBar";
 import { Link } from 'react-router-dom';
+import Logo from '../Images/logoLMBE.png'; 
 
 function App_Header(){
-    const Logo = '/logoLMBE.png?v=1';
     return(
             <header className="App-header">
                 <Link to = "/">

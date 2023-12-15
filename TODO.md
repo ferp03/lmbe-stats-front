@@ -9,13 +9,14 @@ Project Description
 - [ ] Filter tables  
 - [ ] Hover effects  
 - [ ] Contacto  
-- [ ] Sobre nosotros  
 - [ ] Sider teams color  
 
 ### In Progress
 
-- [ ] Footers  
+- [ ] Agregar animación a fotos  
+- [ ] Sobre nosotros (Home)  
 
 ### Done ✓
 
+- [x] Footers  
 
