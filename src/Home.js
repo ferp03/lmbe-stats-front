@@ -6,7 +6,7 @@ import './Home.css';
 
 const Content = () => {
   return (
-    <div style={{padding: 20, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+    <div style={{padding: 20, display: "flex", flexDirection: "column"}}>
       <strong><h3 style={{textAlign: "center"}}>¡Bienvenido a la Emoción del Baloncesto Amateur!</h3></strong>
       {/* Add your attractive image or video component here */}
        <ImageSlider />

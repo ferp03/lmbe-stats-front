@@ -18,10 +18,10 @@ const images = [
 
 const ImageSlider = () => {
   return (
-    <div style={{border: "1px solid red", display: 'flex', justifyContent: 'center'}}>
-      <Carousel autoplay dotPosition={'left'} style={{display: "block", marginLeft: "auto", marginRight: "auto"}}>
+    <div style={{border: "1px solid red"}}>
+      <Carousel  dotPosition={'left'}>
         {images.map((image, index) => (
-          <div key={index} style={{display: 'flex', justifyContent: 'center'}}>
+          <div key={index}>
             <img src={image.url} alt={image.title} className="carousel-Img" />
           </div>
         ))}
