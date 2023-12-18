@@ -12,7 +12,6 @@ function App_Header(){
                 </Link>
                 <p className="Header-text"> Liga Básquetbol Monterrey Elite</p>
                 <div className="Menu-container">
-                    {/* <MenuButtons /> */}
                     <NavBar />
                 </div>
             </header>

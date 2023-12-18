@@ -46,6 +46,7 @@ const GeneralTable = ({ teamName }) => {
     return(
         <Layout 
         className="LayoutTables">
+            <h2>Tabla General</h2>
             <Table 
             className="Tables"
             dataSource={data} columns={columns} 

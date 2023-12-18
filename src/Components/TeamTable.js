@@ -44,6 +44,7 @@ const TeamTable = ({ teamName }) => {
     return (
         <Layout
         className='LayoutTables'>
+            <h2>{teamName}</h2>
             <Table 
             className='Tables'
             dataSource={data} columns={columns} 

@@ -1,10 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ImageSlider from "./Components/ImageSlider";
-import { Layout } from 'antd';
+import { Layout, Button } from 'antd';
 import './Home.css';
 
 
 const Content = () => {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/contacto");
+  }
+
   return (
     <div style={{padding: 20, display: "flex", flexDirection: "column", justifyContent: "center"}}>
       <strong><h3 style={{textAlign: "center"}}>¡Bienvenido a la Emoción del Baloncesto Amateur!</h3></strong>
@@ -48,7 +55,7 @@ const Content = () => {
         <div>
           <h3>¿Cómo Participar?</h3>
           <p>Regístrate Ahora</p>
-          <button>¡Sé parte de la acción! Regístrate ahora.</button>
+          <Button shape="round" onClick={handleButtonClick}>¡Sé parte de la acción! Regístrate ahora.</Button>
         </div>
       </section>
     </div>
