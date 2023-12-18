@@ -61,9 +61,9 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
       </Sider>
       <Button 
         type="text"
-        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+        icon={collapsed ? <MenuUnfoldOutlined style={{fontSize: "22px"}}/> : <MenuFoldOutlined style={{fontSize: "22px"}}/>}
         onClick={() => setCollapsed(!collapsed)}
-        title="Ver equipos"
+        title="Ver estadisticas"
       />
       <Content>
         <EquiposRoutes.EquiposRoutes />
