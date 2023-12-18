@@ -4,6 +4,7 @@ import './App.css';
 import EquiposRoot from './Components/EquiposRoot';
 import SiderTeams from './Components/SiderTeams';
 import Home from './Home';
+import Contacto from './Contacto';
 import AppHeader from './Components/Header';
 import TeamTable from './Components/TeamTable';
 import GeneralTable from './Components/GeneralTable';
@@ -18,7 +19,7 @@ function App() {
       <AppHeader />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="contacto" element={<div>Contacto</div>} />
+        <Route path="contacto" element={<Contacto />} />
         <Route path="/equipos/*" element={ <div className='TeamsContainer'> <SiderTeams EquiposRoutes={EquiposRoutes}/> </div>} />
         <Route path="*" element={<FuncNotFound />} />
       </Routes>
