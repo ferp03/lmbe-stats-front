@@ -13,7 +13,7 @@ const Content = () => {
   }
 
   return (
-    <div style={{padding: 20, display: "flex", flexDirection: "column", justifyContent: "center"}}>
+    <div style={{padding: 20, paddingBottom: 30, display: "flex", flexDirection: "column", justifyContent: "center"}}>
       <strong><h3 style={{textAlign: "center"}}>¡Bienvenido a la Emoción del Baloncesto Amateur!</h3></strong>
       {/* Add your attractive image or video component here */}
        <ImageSlider />
@@ -38,7 +38,7 @@ const Content = () => {
             <li>
               {/* TODO */}
               <strong>Comunidad Apasionada</strong>
-              <p>Conéctate con Amantes del Baloncesto: Únete a nuestra vibrante comunidad en línea. Comparte tus momentos favoritos, participa en conversaciones y conoce a otros apasionados del baloncesto.</p>
+              <p>Únete a la competencia: Sé parte de una experiencia única donde la competencia y la pasión convergen para crear momentos inolvidables en la cancha. ¡Prepárate para elevar tu juego y ser parte de nuestra comunidad competitiva.</p>
             </li>
           </ul>
         </div>
@@ -48,14 +48,14 @@ const Content = () => {
           {/* Add your news or blog section here */}
           <ul>
             <li>🏆Papeadores campeón actual🏆</li>
-            <li>🏀+10 equipos inscritos temporada Invierno 2023🏀</li>
+            <li>🏀+10 equipos inscritos temporada Sept-Dic 2023🏀</li>
           </ul>
         </div>
 
         <div>
           <h3>¿Cómo Participar?</h3>
           <p>Regístrate Ahora</p>
-          <Button shape="round" onClick={handleButtonClick}>¡Sé parte de la acción! Regístrate ahora.</Button>
+          <Button shape="round" type="primary" onClick={handleButtonClick}>¡Únete a LMBE! Regístrate ahora.</Button>
         </div>
       </section>
     </div>
