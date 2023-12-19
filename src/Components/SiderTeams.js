@@ -42,7 +42,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
         <div/>
         <Menu 
         theme="dark"
-        style={{backgroundColor: "#282c34", color: "white", border: "none"}}
+        style={{backgroundColor: "#282c34", border: "none"}}
         mode="inline" 
         defaultSelectedKeys={[window.location.pathname]}
         >
@@ -54,7 +54,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
                 navigate(`/equipos/${item}`)}   
               } 
             >
-              <p style = {{background: "#fffff", fontWeight: "semibold"}}>{item}</p>
+              <p style={{fontWeight: "bold", color: "e6e6e6"}}>{item}</p>
             </Menu.Item>
           ))}
         </Menu>

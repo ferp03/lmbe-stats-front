@@ -41,6 +41,10 @@
     flex-direction: column;
 }
 
+.sider-item{
+    transition: all 0.3s ease;
+}
+
 /*Movil*/
 @media (max-width: 500px){ 
     .carousel-Img{

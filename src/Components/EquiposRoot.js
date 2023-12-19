@@ -1,4 +1,5 @@
 import { Layout, theme } from "antd";
+import { MenuUnfoldOutlined } from "@ant-design/icons";
 import './Components.css';
 
 
@@ -35,7 +36,9 @@ function ContentPrincipal() {
           background: colorBgContainer,
         }}
       >
-        Aqui digo dq que onda estos son nuestros equipos, encontraras informacion de estadistica por cada jugador de cada equipo
+        <p>Aqui podrás ver las estadisticas personalizadas de cada jugador! Tomamos en cuenta puntos, rebotes, asistencias y triples de cada partido.</p> 
+        <p>También podrás ver la tabla general de la temporada actual!</p>
+        <p>Has click en el botón <MenuUnfoldOutlined /> para poder descubrir los nuestros equipos y jugadores</p>
       </div>
     </Content>
   );

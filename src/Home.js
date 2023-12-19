@@ -38,7 +38,7 @@ const Content = () => {
             <li>
               {/* TODO */}
               <strong>Comunidad Apasionada</strong>
-              <p>Únete a la competencia: Sé parte de una experiencia única donde la competencia y la pasión convergen para crear momentos inolvidables en la cancha. ¡Prepárate para elevar tu juego y ser parte de nuestra comunidad competitiva.</p>
+              <p>Únete a la competencia: Sé parte de una experiencia única donde la competencia y la pasión convergen para crear momentos inolvidables en la cancha. ¡Prepárate para elevar tu juego y ser parte de nuestra comunidad competitiva!</p>
             </li>
           </ul>
         </div>

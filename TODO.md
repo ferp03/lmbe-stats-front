@@ -8,16 +8,15 @@ Project Description
 
 - [ ] header buttons routing  
 - [ ] Filter tables  
-- [ ] Hover effects  
-- [ ] Sider teams color  
+- [ ] Home -> resize img  
 
 ### In Progress
 
 - [ ] Contacto  
-- [ ] Home -> resize img  
 
 ### Done ✓
 
+- [x] Hover effects  
 - [x] Agregar animación a fotos  
 - [x] Footers  
 
