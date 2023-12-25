@@ -14,7 +14,7 @@ function EquiposRoot() {
       {/* contenido de la pagina */}
       <ContentPrincipal />
       <Footer
-      style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+      style={{display: "flex", justifyContent: "center", alignItems: "center", borderTop: 0}}>
         <div>
           <p>LMBE STATS</p>
         </div>
