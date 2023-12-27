@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Empty, Table } from "antd";
-import { Layout } from "antd";
+import { Layout, Space, Alert } from "antd";
+import { MenuUnfoldOutlined } from "@ant-design/icons";
 import "./Components.css";
-
 
 const GeneralTable = ({}) => {
     const [data, setData] = useState([]);
@@ -41,12 +41,30 @@ const GeneralTable = ({}) => {
                 </div>
             </footer>
         )
-    }
+    };
+
+function ContentPrincipal() {
+    return (
+        <div>
+            <p>¡Aquí podrás ver las estadisticas personalizadas de cada equipo y sus jugadores! Tomamos en cuenta puntos, rebotes, asistencias y triples de cada partido.</p> 
+            <p>Has click en el botón <MenuUnfoldOutlined /> para poder descubrir los nuestros equipos y jugadores</p>
+        </div>
+        );
+    };   
 
     return(
         <Layout 
         className="LayoutTables">
             <h2>Tabla General</h2>
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <Space direction='vertical' style={{width: "80vw"}}>
+                    <Alert message="¡Hola!"
+                    description={<ContentPrincipal />} 
+                    type="info"
+                    showIcon closable />
+                    
+                </Space>
+            </div>
             <Table 
             className="Tables"
             dataSource={data} columns={columns} 
