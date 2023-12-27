@@ -4,14 +4,14 @@ import { Layout } from "antd";
 import "./Components.css";
 
 
-const GeneralTable = ({ teamName }) => {
+const GeneralTable = ({}) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=${teamName}`)
+        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=TABLA`)
         .then(response => response.json())
         .then(data => setData(data.values));
-    }, [teamName]);
+    }, []);
     
     const columns = [
         { title: "Posicion", dataIndex: 0 },
