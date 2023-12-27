@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import EquiposRoot from './Components/EquiposRoot';
 import SiderTeams from './Components/SiderTeams';
 import Home from './Home';
 import Contacto from './Contacto';
@@ -20,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="contacto" element={<Contacto />} />
-        <Route path="/equipos/*" element={ <div className='TeamsContainer'> <SiderTeams EquiposRoutes={EquiposRoutes}/> </div>} />
+        <Route path="/estadisticas/*" element={ <div className='TeamsContainer'> <SiderTeams EquiposRoutes={EquiposRoutes}/> </div>} />
         <Route path="*" element={<FuncNotFound />} />
       </Routes>
     </Router>
@@ -30,7 +29,7 @@ function App() {
 function EquiposRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<EquiposRoot />} />
+      <Route path="/" element={<GeneralTable />} />
       <Route path=":teamName" element={<Team />} />
       <Route path="*" element={<FuncNotFound />} />
     </Routes>
@@ -39,11 +38,7 @@ function EquiposRoutes() {
 
 function Team(){
   let {teamName} = useParams();
-  if(teamName === "TABLA"){
-    return <GeneralTable />
-  }else{
-    return <TeamTable teamName={teamName} />
-  }
+  return <TeamTable teamName={teamName} />
 }
 
 export default App;
