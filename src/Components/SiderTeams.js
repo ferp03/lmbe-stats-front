@@ -51,7 +51,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
             className="sider-item"
               key = {item}
               onClick={() =>{
-                navigate(`/equipos/${item}`)}   
+                navigate(`/estadisticas/${item}`)}   
               } 
             >
               <p style={{fontWeight: "bold", color: "e6e6e6"}}>{item}</p>

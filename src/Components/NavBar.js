@@ -41,8 +41,8 @@ function Buttons({inLine=false}){
         },
         {
             key: "2",
-            label: "Equipos",
-            link: "/equipos",
+            label: "Estadisticas",
+            link: "/estadisticas",
         },
         {
             key: "3",
