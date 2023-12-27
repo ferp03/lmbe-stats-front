@@ -40,7 +40,7 @@ function EquiposRoutes() {
 function Team(){
   let {teamName} = useParams();
   if(teamName === "TABLA"){
-    return <GeneralTable teamName={teamName} />
+    return <GeneralTable />
   }else{
     return <TeamTable teamName={teamName} />
   }
