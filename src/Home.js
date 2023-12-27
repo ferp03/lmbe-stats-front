@@ -14,7 +14,7 @@ const Content = () => {
 
   return (
     <div style={{padding: 20, paddingBottom: 30, display: "flex", flexDirection: "column", justifyContent: "center"}}>
-      <strong><h3 style={{textAlign: "center"}}>¡Bienvenido a la Emoción del Baloncesto Amateur!</h3></strong>
+      <strong><h2 style={{textAlign: "center"}}>¡Bienvenido a la Emoción del Baloncesto Amateur!</h2></strong>
       {/* Add your attractive image or video component here */}
        <ImageSlider />
 
