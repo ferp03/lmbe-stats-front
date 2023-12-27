@@ -4,7 +4,7 @@ import { Layout, Space, Alert } from "antd";
 import { MenuUnfoldOutlined } from "@ant-design/icons";
 import "./Components.css";
 
-const GeneralTable = ({}) => {
+const GeneralTable = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
