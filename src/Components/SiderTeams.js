@@ -1,5 +1,5 @@
 import React, { useState, useEffect, memo } from "react";
-import { Layout, Menu, Button } from "antd";
+import { Layout, Menu, Button, Tooltip } from "antd";
 import { useNavigate } from "react-router-dom";
 import "./Components.css";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
@@ -59,12 +59,23 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
           ))}
         </Menu>
       </Sider>
+      {collapsed ? (
+      <Tooltip placement="right" title="Ver equipos">
+        <Button 
+          type="text"
+          icon={<MenuUnfoldOutlined style={{fontSize: "22px"}}/>}
+          onClick={() => setCollapsed(!collapsed)}
+          title="Ver estadisticas"
+         />
+      </Tooltip>
+      ) : (
       <Button 
         type="text"
-        icon={collapsed ? <MenuUnfoldOutlined style={{fontSize: "22px"}}/> : <MenuFoldOutlined style={{fontSize: "22px"}}/>}
+        icon={<MenuFoldOutlined style={{fontSize: "22px"}}/>}
         onClick={() => setCollapsed(!collapsed)}
         title="Ver estadisticas"
       />
+)}
       <Content>
         <EquiposRoutes.EquiposRoutes />
       </Content>
