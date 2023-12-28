@@ -29,7 +29,7 @@ function App() {
 function EquiposRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<GeneralTable />} />
+      <Route path="/TABLA" element={<GeneralTable />} />
       <Route path=":teamName" element={<Team />} />
       <Route path="*" element={<FuncNotFound />} />
     </Routes>

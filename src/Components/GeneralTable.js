@@ -14,7 +14,7 @@ const GeneralTable = () => {
     }, []);
     
     const columns = [
-        { title: "Posicion", dataIndex: 0 },
+        { title: "Posición", dataIndex: 0 },
         { title: "Equipo", dataIndex: 1 },
         { title: "PG", dataIndex: 2 },
         { title: "PJ", dataIndex: 3 },
@@ -47,7 +47,7 @@ function ContentPrincipal() {
     return (
         <div>
             <p>¡Aquí podrás ver las estadisticas personalizadas de cada equipo y sus jugadores! Tomamos en cuenta puntos, rebotes, asistencias y triples de cada partido.</p> 
-            <p>Has click en el botón <MenuUnfoldOutlined /> para poder descubrir los nuestros equipos y jugadores</p>
+            <p>Has click en el botón <MenuUnfoldOutlined /> para poder descubrir los nuestros equipos y jugadores.</p>
         </div>
         );
     };   
