@@ -1,6 +1,6 @@
 import { Menu, Drawer } from 'antd'; 
 import { MenuOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import './Header.css'
 
@@ -33,6 +33,7 @@ function NavBar(){
 }
 
 function Buttons({inLine=false}){
+    const location = useLocation();
     const items = [
         {
             key: "1",
@@ -51,10 +52,15 @@ function Buttons({inLine=false}){
         },
         
     ]
+
+    const selectedKey = items.find(item => item.link === location.pathname)?.key;
+
     return(
         <Menu 
             style={{backgroundColor: "#282c34", color: "white", fontWeight: "bold", border: "none"}}
             mode={inLine ? "inline" : "horizontal"}
+            defaultSelectedKeys={["1"]}
+            selectedKeys={[selectedKey]}
         >
             {items.map(item => (
                 <Menu.Item
