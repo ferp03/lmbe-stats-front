@@ -69,3 +69,8 @@
         display: flex;
     }
 }
+
+.ant-menu-item-active{
+    background-color: #282c34 !important;
+    color: rgb(27, 95, 198) !important;
+}
