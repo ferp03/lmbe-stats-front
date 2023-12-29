@@ -11,7 +11,6 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(true);
 
-
   useEffect(() => {
     fetch("https://lmbe-stats.uc.r.appspot.com/api/getSheets", {
       method: "GET",
@@ -20,7 +19,6 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
       .then((data) => {
         if (data && data.sheets) {
           setItems(data.sheets);
-          console.log(data.sheets);
         }
       })
       .catch((error) => {
@@ -44,7 +42,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
         theme="dark"
         style={{backgroundColor: "#282c34", border: "none"}}
         mode="inline" 
-        defaultSelectedKeys={[window.location.pathname]}
+        defaultSelectedKeys={'TABLA'}
         >
           {items.map((item) => (
             <Menu.Item
