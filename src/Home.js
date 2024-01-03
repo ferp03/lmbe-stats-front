@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import ImageSlider from "./Components/ImageSlider";
+import Map from "./Components/Map";
 import { Layout, Button } from 'antd';
 import './Home.css';
 
@@ -13,7 +14,7 @@ const Content = () => {
   }
 
   return (
-    <div style={{padding: 20, paddingBottom: 30, display: "flex", flexDirection: "column", justifyContent: "center"}}>
+    <div style={{padding: 20, paddingBottom: 0, display: "flex", flexDirection: "column", justifyContent: "center"}}>
       <strong><h2 style={{textAlign: "center"}}>¡Bienvenido a la Emoción del Baloncesto Amateur!</h2></strong>
       {/* Add your attractive image or video component here */}
        <ImageSlider />
@@ -67,6 +68,7 @@ function Home(){
   return(
     <Layout>
       <Content />
+      <Map />
     </Layout>
   );
 }
