@@ -25,3 +25,4 @@ https://lmbe-stats-front.uc.r.appspot.com
 - Google Cloud
 - App Engine
 - Google Sheets API
+- Google Maps API
