@@ -1,28 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { Empty, Table } from "antd";
+import { Empty, Table, Input } from "antd";
 import { Layout, Space, Alert } from "antd";
 import { MenuUnfoldOutlined } from "@ant-design/icons";
 import "./Components.css";
 
 const GeneralTable = () => {
     const [data, setData] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=TABLA`)
         .then(response => response.json())
         .then(data => setData(data.values));
     }, []);
-    
+
+    const handleSearch = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
+    const filteredData = data.filter(item => 
+        item[1].toLowerCase().includes(searchTerm.toLowerCase())
+    );
     const columns = [
-        { title: "Posición", dataIndex: 0 },
+        { title: "Posición", dataIndex: 0, sorter: (a,b) => a[0] - b[0], sortDirections: ['descend', 'ascend'] },
         { title: "Equipo", dataIndex: 1 },
-        { title: "PG", dataIndex: 2 },
-        { title: "PJ", dataIndex: 3 },
-        { title: "V", dataIndex: 4 },
-        { title: "D", dataIndex: 5 },
-        { title: "PFP", dataIndex: 6 },
-        { title: "PCP", dataIndex: 7 },
-        { title: "DIF", dataIndex: 8 }
+        { title: "PG", dataIndex: 2, sorter: (a,b) => a[2] - b[2], sortDirections: ['descend', 'ascend'] },
+        { title: "PJ", dataIndex: 3, sorter: (a,b) => a[3] - b[3], sortDirections: ['descend', 'ascend'] },
+        { title: "V", dataIndex: 4, sorter: (a,b) => a[4] - b[4], sortDirections: ['descend', 'ascend'] },
+        { title: "D", dataIndex: 5, sorter: (a,b) => a[5] - b[5], sortDirections: ['descend', 'ascend'] },
+        { title: "PFP", dataIndex: 6, sorter: (a,b) => a[6] - b[6], sortDirections: ['descend', 'ascend'] },
+        { title: "PCP", dataIndex: 7, sorter: (a,b) => a[7] - b[7], sortDirections: ['descend', 'ascend'] },
+        { title: "DIF", dataIndex: 8, sorter: (a,b) => a[8] - b[8], sortDirections: ['descend', 'ascend'] }
     ];
 
     const SignificadosGeneral = () => {
@@ -65,9 +73,12 @@ function ContentPrincipal() {
                     
                 </Space>
             </div>
+            <Input.Search 
+                placeholder='Buscar Equipo...'
+                onChange={handleSearch}/>
             <Table 
             className="Tables"
-            dataSource={data} columns={columns} 
+            dataSource={filteredData} columns={columns} 
             pagination={false}
             locale={{emptyText: <Empty description="Recuperando información..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
             scroll={{x:'max-content'}}
