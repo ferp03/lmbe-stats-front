@@ -26,8 +26,7 @@ const GeneralTable = () => {
     const columns = [
         { title: "Posición", dataIndex: 0, sorter: (a,b) => a[0] - b[0], sortDirections: ['descend', 'ascend'] },
         { title: "Equipo", dataIndex: 1, render: (text, record) => (
-            <div style={{color: "blue", cursor: "pointer"}} onClick={() => navigate(`/estadisticas/${text}`)}>{text}</div>
-        ) },
+            <div style={{color: "blue", cursor: "pointer"}} onClick={() => navigate(`/estadisticas/${text}`)}>{text}</div>)},
         { title: "PG", dataIndex: 2, sorter: (a,b) => a[2] - b[2], sortDirections: ['descend', 'ascend'] },
         { title: "PJ", dataIndex: 3, sorter: (a,b) => a[3] - b[3], sortDirections: ['descend', 'ascend'] },
         { title: "V", dataIndex: 4, sorter: (a,b) => a[4] - b[4], sortDirections: ['descend', 'ascend'] },
@@ -86,6 +85,7 @@ function ContentPrincipal() {
             pagination={false}
             locale={{emptyText: <Empty description="Recuperando información..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
             scroll={{x:'max-content'}}
+            showSorterTooltip={false}
             />
            <SignificadosGeneral /> 
         </Layout>

@@ -6,17 +6,11 @@ Project Description
 
 ### Todo
 
-- [ ] header buttons routing  
-- [ ] Filter tables  
 - [ ] Home -> resize img  
 
 ### In Progress
 
-- [ ] Contacto  
 
 ### Done ✓
 
-- [x] Hover effects  
-- [x] Agregar animación a fotos  
-- [x] Footers  
 

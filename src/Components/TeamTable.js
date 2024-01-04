@@ -63,6 +63,7 @@ const TeamTable = ({ teamName }) => {
             pagination={false}
             locale={{emptyText: <Empty description="Recuperando información..." image={Empty.PRESENTED_IMAGE_SIMPLE} />}}
             scroll={{x: "max-content"}}
+            showSorterTooltip={false}
             />
             <Footercillo />
         </Layout>
