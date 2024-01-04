@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Empty, Table, Input } from "antd";
 import { Layout, Space, Alert } from "antd";
 import { MenuUnfoldOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 import "./Components.css";
 
 const GeneralTable = () => {
     const [data, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=TABLA`)
@@ -23,7 +25,9 @@ const GeneralTable = () => {
     );
     const columns = [
         { title: "Posición", dataIndex: 0, sorter: (a,b) => a[0] - b[0], sortDirections: ['descend', 'ascend'] },
-        { title: "Equipo", dataIndex: 1 },
+        { title: "Equipo", dataIndex: 1, render: (text, record) => (
+            <div style={{color: "blue", cursor: "pointer"}} onClick={() => navigate(`/estadisticas/${text}`)}>{text}</div>
+        ) },
         { title: "PG", dataIndex: 2, sorter: (a,b) => a[2] - b[2], sortDirections: ['descend', 'ascend'] },
         { title: "PJ", dataIndex: 3, sorter: (a,b) => a[3] - b[3], sortDirections: ['descend', 'ascend'] },
         { title: "V", dataIndex: 4, sorter: (a,b) => a[4] - b[4], sortDirections: ['descend', 'ascend'] },
