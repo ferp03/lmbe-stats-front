@@ -26,6 +26,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
       });
   }, []);
 
+  const selectedKey = decodeURIComponent(window.location.pathname.split('/').pop());
 
   return (
     <Layout
@@ -43,14 +44,16 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
         style={{backgroundColor: "#282c34", border: "none"}}
         mode="inline" 
         defaultSelectedKeys={'TABLA'}
+        selectedKeys={[selectedKey]}
         >
           {items.map((item) => (
             <Menu.Item
-            className="sider-item"
+              className="sider-item"
               key = {item}
               onClick={() =>{
-                navigate(`/estadisticas/${item}`)}   
-              } 
+                navigate(`/estadisticas/${item}`);
+                setCollapsed(true);
+              }}
             >
               <p style={{fontWeight: "bold", color: "e6e6e6"}}>{item}</p>
             </Menu.Item>
