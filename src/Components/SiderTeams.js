@@ -1,8 +1,8 @@
 import React, { useState, useEffect, memo } from "react";
 import { Layout, Menu, Button, Tooltip } from "antd";
 import { useNavigate } from "react-router-dom";
-import "./Components.css";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import "./Components.css";
 
 const { Sider, Content } = Layout;
 
@@ -10,6 +10,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(true);
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     fetch("https://lmbe-stats.uc.r.appspot.com/api/getSheets", {
@@ -36,7 +37,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
       collapsible collapsed={collapsed}
       breakpoint="lg"
       collapsedWidth="0"
-      style={{backgroundColor: "#282c34", height: "100%"}}
+      style={{backgroundColor: "#282c34", height: "100%", transitionDuration: "0.4s", transitionDelay: clicked ? "0.2s" : "0.0s"}}
       >
         <div/>
         <Menu 
@@ -53,6 +54,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
               onClick={() =>{
                 navigate(`/estadisticas/${item}`);
                 setCollapsed(true);
+                setClicked(true);
               }}
             >
               <p style={{fontWeight: "bold", color: "e6e6e6"}}>{item}</p>
@@ -65,7 +67,10 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
         <Button 
           type="text"
           icon={<MenuUnfoldOutlined style={{fontSize: "22px"}}/>}
-          onClick={() => setCollapsed(!collapsed)}
+          onClick={() =>{
+            setCollapsed(!collapsed);
+            setClicked(false);
+          }}
           title="Ver estadisticas"
          />
       </Tooltip>
