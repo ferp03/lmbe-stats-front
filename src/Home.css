@@ -1,23 +1,48 @@
-.Basketball{
-    max-width: 100vw;
-  }
-
-.Basketball-Container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: rgb(255, 255, 255);
-}
-
-@media(max-width: 500px){
-    .Basketball{
-        max-width: 100vw;
-    }
-}
-
 .Info-LandingPage{
     text-align: center;
 
 }
+
+/* Estilo base del botón */
+.ant-btn.ant-btn-lg{
+    font-size: 15px;
+    height: 40px;
+    padding: 6.428571428571429px 15px;
+    border-radius: 8px;
+}
+
+.btn {
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40B3A2;
+    border: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    opacity: .95;
+  }
+  
+  .btn .animation {
+    border-radius: 100%;
+    animation: ripple 0.6s linear infinite;
+  }
+  
+  @keyframes ripple {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+  
+    100% {
+      box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+  }

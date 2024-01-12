@@ -55,8 +55,11 @@ const Content = () => {
 
         <div>
           <h3>¿Cómo Participar?</h3>
-          <p>Regístrate Ahora</p>
-          <Button shape="round" type="primary" onClick={handleButtonClick}>¡Únete a LMBE! Regístrate ahora.</Button>
+          <Button className="btn" size="large" shape="round" onClick={handleButtonClick}>
+            <i className="animation"></i>
+            ¡Únete a LMBE! Regístrate ahora
+            <i className="animation"></i>
+          </Button>
         </div>
       </section>
     </div>

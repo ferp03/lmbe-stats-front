@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { InstagramOutlined, WhatsAppOutlined, MailOutlined } from "@ant-design/icons";
+import './Home.css';
 
 const Contacto = () => {
   const whatsappNumber = '81 2360 5971 / 81 2468 0512';
@@ -40,8 +41,10 @@ const Contacto = () => {
 
         <Col xs={24} sm={16} md={12} lg={8} style={{textAlign: "center"}}>
           <h2>Inscríbete Ahora</h2>
-          <Button type="primary" href={registrationFormLink} target="_blank" rel="noopener noreferrer">
+          <Button className='btn' type="primary" href={registrationFormLink} target="_blank" rel="noopener noreferrer">
+            <i className="animation"></i>
             Inscríbete
+            <i className="animation"></i>
           </Button>
         </Col>
       </Row>
