@@ -4,10 +4,11 @@ import { InstagramOutlined, WhatsAppOutlined, MailOutlined } from "@ant-design/i
 import './Home.css';
 
 const Contacto = () => {
-  const whatsappNumber = '81 2360 5971 / 81 2468 0512';
+  const whatsappNumber = '+52 81 2360 5971 / +52 81 2468 0512';
   const email = 'lmbe.oficial@gmail.com';
   const instagramLink = 'https://www.instagram.com/lmbe.oficial?igshid=MTNiYzNiMzkwZA%3D%3D&utm_source=qr';
-  const registrationFormLink = 'https://forms.gle/1jfFRurMucZTW2YYA';
+  const registrationFormLink = 'https://forms.gle/jiJ4qqio4rYp83ZaA';
+  const agentesLibres = 'https://forms.gle/XDNJJe7MQFM37Bgv8';
 
   return (
     <div style={{ padding: 25 }}>
@@ -41,11 +42,18 @@ const Contacto = () => {
 
         <Col xs={24} sm={16} md={12} lg={8} style={{textAlign: "center"}}>
           <h2>Inscríbete Ahora</h2>
-          <Button className='btn' type="primary" href={registrationFormLink} target="_blank" rel="noopener noreferrer">
-            <i className="animation"></i>
-            Inscríbete
-            <i className="animation"></i>
-          </Button>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
+            <Button style={{marginBottom: '10px'}} className='btn' type="primary" href={registrationFormLink} target="_blank" rel="noopener noreferrer">
+              <i className="animation"></i>
+              Inscribe a tu Equipo
+              <i className="animation"></i>
+            </Button>
+            <Button className='btn' type='primary' href={agentesLibres} target='_blank' rel='noopener noreferrer'>
+              <i className='animation'></i>
+              Agentes Libres
+              <i className='animation'></i>
+            </Button>
+          </div>
         </Col>
       </Row>
     </div>

@@ -55,7 +55,7 @@ const Content = () => {
 
         <div>
           <h3>¿Cómo Participar?</h3>
-          <Button className="btn" size="large" shape="round" onClick={handleButtonClick}>
+          <Button className="btn" type='primary' size="large" shape="round" onClick={handleButtonClick}>
             <i className="animation"></i>
             ¡Únete a LMBE! Regístrate ahora
             <i className="animation"></i>
