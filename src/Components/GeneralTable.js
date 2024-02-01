@@ -5,16 +5,20 @@ import { MenuUnfoldOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import "./Components.css";
 
-const GeneralTable = () => {
+const GeneralTable = ({ season }) => {
     const [data, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
+    //Tabla general primera temporada
+
     useEffect(() => {
-        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=TABLA`)
+
+        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=${season}`)
         .then(response => response.json())
         .then(data => setData(data.values));
     }, []);
+    
 
     const handleSearch = (e) => {
         setSearchTerm(e.target.value);

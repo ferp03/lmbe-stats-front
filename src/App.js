@@ -29,7 +29,7 @@ function App() {
 function EquiposRoutes() {
   return (
     <Routes>
-      <Route path="/TABLA" element={<GeneralTable />} />
+      <Route path="/TABLA" element={<GT />} />
       <Route path=":teamName" element={<Team />} />
       <Route path="*" element={<FuncNotFound />} />
     </Routes>
@@ -39,6 +39,11 @@ function EquiposRoutes() {
 function Team(){
   let {teamName} = useParams();
   return <TeamTable teamName={teamName} />
+}
+
+function GT(){
+  let {season} = useParams();
+  return <GeneralTable season={season} />
 }
 
 export default App;
