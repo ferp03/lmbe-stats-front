@@ -9,7 +9,7 @@ function NavBar(){
     return(
         <div>
             <div className='Menu-Icon'>
-                <p className='Header-text'>Menu</p>
+                <p className='Header-text'>Menú</p>
                 <MenuOutlined 
                 style={{height: "8vh", padding: 8, alignSelf: 'center'}}
                 onClick={() => {setOpenMenu(true);}}
