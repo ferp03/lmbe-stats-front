@@ -43,7 +43,7 @@ function Buttons({inLine=false}){
         {
             key: "2",
             label: "Estadisticas",
-            link: "/estadisticas/TABLA",
+            link: "/estadisticas",
         },
         {
             key: "3",
