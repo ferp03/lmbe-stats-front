@@ -4,28 +4,28 @@ import { useNavigate } from "react-router-dom";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import "./Components.css";
 
-const { Sider, Content } = Layout;
+const { Sider } = Layout;
 
-const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
+const SiderTeams = memo(function SiderTeams({ season }) {
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(true);
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    fetch("https://lmbe-stats.uc.r.appspot.com/api/getSheets", {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.sheets) {
-          setItems(data.sheets);
-        }
+      fetch(`https://lmbe-stats.uc.r.appspot.com/api/getSheets/${season}`, {
+        method: "GET",
       })
-      .catch((error) => {
-        console.error("Error fetching data en sider:", error);
-      });
-  }, []);
+        .then((response) => response.json())
+        .then((data) => {
+          if (data && data.sheets) {
+            setItems(data.sheets);
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data en sider:", error);
+        });
+  }, [season]);
 
   const selectedKey = decodeURIComponent(window.location.pathname.split('/').pop());
 
@@ -52,7 +52,7 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
               className="sider-item"
               key = {item}
               onClick={() =>{
-                navigate(`/estadisticas/${item}`);
+                navigate(`/estadisticas/${season}/${item}`);
                 setCollapsed(true);
                 setClicked(true);
               }}
@@ -82,9 +82,6 @@ const SiderTeams = memo(function SiderTeams(EquiposRoutes) {
         title="Ver estadisticas"
       />
 )}
-      <Content>
-        <EquiposRoutes.EquiposRoutes />
-      </Content>
     </Layout>
   );
 });
