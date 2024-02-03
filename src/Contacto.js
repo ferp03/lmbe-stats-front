@@ -1,12 +1,12 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
-import { InstagramOutlined, WhatsAppOutlined, MailOutlined } from "@ant-design/icons";
+import { InstagramOutlined, FacebookOutlined, WhatsAppOutlined, MailOutlined } from "@ant-design/icons";
 import './Home.css';
 
 const Contacto = () => {
-  const whatsappNumber = '+52 81 2360 5971 / +52 81 2468 0512';
   const email = 'lmbe.oficial@gmail.com';
   const instagramLink = 'https://www.instagram.com/lmbe.oficial?igshid=MTNiYzNiMzkwZA%3D%3D&utm_source=qr';
+  const facebookLink = 'https://www.facebook.com/lmbe.oficial?mibextid=LQQJ4d';
   const registrationFormLink = 'https://forms.gle/jiJ4qqio4rYp83ZaA';
   const agentesLibres = 'https://forms.gle/XDNJJe7MQFM37Bgv8';
 
@@ -22,17 +22,24 @@ const Contacto = () => {
       <Row gutter={[16, 16]} justify="center">
         <Col xs={24} sm={12} md={8}>
           <h2>Redes Sociales</h2>
-          <InstagramOutlined style={{ fontSize: '22px' }} />
-          <a href={instagramLink} target="_blank" rel="noopener noreferrer">
-            <> Instagram</>
-          </a>
+          <p>
+            <InstagramOutlined style={{ fontSize: '22px' }} />
+            <a href={instagramLink} target="_blank" rel="noopener noreferrer">
+              <> Instagram</>
+            </a>
+          </p>
+          <p>
+            <FacebookOutlined style={{ fontSize: '22px' }} />
+            <a href={facebookLink} target="_blank" rel="noopener noreferrer">
+              <> Facebook</>
+            </a>
+          </p>
         </Col>
 
         <Col xs={24} sm={12} md={8}>
           <h2>Contacto Directo</h2>
           <p>
-            <WhatsAppOutlined style={{ fontSize: '22px' }} />
-            <> WhatsApp: {whatsappNumber}</>
+            ¡Contáctanos por nuestras redes sociales!
           </p>
           <p>
             <MailOutlined style={{ fontSize: '22px' }} />
