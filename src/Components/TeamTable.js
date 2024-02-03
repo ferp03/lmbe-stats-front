@@ -4,16 +4,15 @@ import { Layout } from 'antd';
 import './Components.css';
 
 
-const TeamTable = ({ teamName }) => {
+const TeamTable = ({ teamName, season }) => {
     const [data, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        // Fetch the JSON data from the server for the specified team
-        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData?team=${teamName}`)
+        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData/${season}?team=${teamName}`)
         .then(response => response.json())
         .then(data => setData(data.values));
-    }, [teamName]);
+    }, [teamName, season]);
 
     const handleSearch = (e) => {
         setSearchTerm(e.target.value);
