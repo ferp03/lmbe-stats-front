@@ -30,7 +30,7 @@ const Content = () => {
           <ul>
             <li>
               <strong>Partidos Inolvidables</strong>
-              <p>Grabación de partidos: Cada partido se graban los momentos favoritos para que puedas revivir los momentos emocionantes una y otra vez.</p>
+              <p>Grabación de partidos: Cada partido se graban los momentos favoritos para que puedas revivir los jugadas emocionantes una y otra vez.</p>
             </li>
             <li>
               <strong>Estadísticas</strong>
