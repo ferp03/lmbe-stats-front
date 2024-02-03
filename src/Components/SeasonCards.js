@@ -12,8 +12,8 @@ const SeasonsCards = () => {
 
     return(
         <Layout style={{height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center"}}>
-            <Row gutter={18} style={{border: "1px solid red", width: "80vw", height: "80vh"}}>
-                <Col span={12} style={{border: "1px solid red"}}>
+            <Row gutter={18} style={{width: "80vw", height: "80vh"}}>
+                <Col span={12}>
                     <Card
                     bordered={false}
                     cover={<img alt="Los Papeadores" src={imgS1} />}
@@ -35,7 +35,7 @@ const SeasonsCards = () => {
                         />
                     </Card>
                 </Col>
-                <Col span={12} style={{border: "1px solid red"}}>
+                <Col span={12} >
                     <Card
                     bordered={false}
                     cover={<img alt="Temporada actual" src={imgCurrent} />}
