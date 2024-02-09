@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Empty, Table, Input } from "antd";
-import { Layout, Space, Alert } from "antd";
+import { Layout } from "antd";
 import { MenuUnfoldOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import "./Components.css";
 
-const GeneralTable = ({ season }) => {
+//Usar tabla prop para seleccionar la tabla general adecuada
+const GeneralTable = ({ tabla, season }) => {
     const [data, setData] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
+
+    let title = "Tabla General";
+
+    if(tabla === "TABLA C1" || tabla === "TABLA C2"){
+        title = tabla === "TABLA C1" ? "Tabla Conferencia 1" : "Tabla Conferencia 2";
+    }
         
     useEffect(() => {
-        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData/${season}?team=TABLA`)
+        fetch(`https://lmbe-stats.uc.r.appspot.com/api/getData/${season}?team=${tabla}`)
         .then(response => response.json())
         .then(data => setData(data.values));
-    }, [season]);
+    }, [tabla, season]);
 
     const handleSearch = (e) => {
         setSearchTerm(e.target.value);
@@ -66,16 +73,7 @@ function ContentPrincipal() {
     return(
         <Layout 
         className="LayoutTables">
-            <h2>Tabla General</h2>
-            <div style={{display: "flex", justifyContent: "center"}}>
-                <Space direction='vertical' style={{width: "80vw"}}>
-                    <Alert message="¡Hola!"
-                    description={<ContentPrincipal />} 
-                    type="info"
-                    showIcon closable />
-                    
-                </Space>
-            </div>
+            <h2>{title}</h2>
             <Input.Search 
                 placeholder='Buscar Equipo...'
                 onChange={handleSearch}/>
