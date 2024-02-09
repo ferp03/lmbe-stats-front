@@ -44,7 +44,10 @@ function SeasonRoutes(){
 function EquiposRoutes({ season }) {
   return (
     <Routes>
-      <Route path="TABLA" element={<GeneralTable season={season} />} />
+      {/* Ver si nombrar la tabla general normal como tabla general o como tabla simplemente (Excel) */}
+      <Route path="TABLA" element={<GeneralTable tabla={"TABLA"} season={season} />} /> 
+      <Route path="TABLA C1" element={<GeneralTable tabla={"TABLA C1"} season={season} />} />
+      <Route path="TABLA C2" element={<GeneralTable tabla={"TABLA C2"} season={season} />} />
       <Route path=":teamName" element={<Team season={season} />} />
       <Route path="*" element={<FuncNotFound />} />
     </Routes>
