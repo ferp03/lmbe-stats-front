@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Layout, Card, Col, Row, Button } from "antd";
 import imgS1 from "../Images/PAPEADORES.jpg";
 import imgCurrent from "../Images/logoOficial.png";
+import "./Components.css";
 
 // const { Content } = Layout;
 const { Meta } = Card;
@@ -12,7 +13,7 @@ const SeasonsCards = () => {
 
     return(
         <Layout style={{height: "100vh", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center"}}>
-            <Row gutter={18} style={{width: "80vw", height: "80vh"}}>
+            <Row gutter={18} style={{width: "80vw", height: "90vh"}}>
                 <Col span={12}>
                     <Card
                     bordered={false}
@@ -38,12 +39,13 @@ const SeasonsCards = () => {
                 <Col span={12} >
                     <Card
                     bordered={false}
-                    cover={<img alt="Temporada actual" src={imgCurrent} />}
+                    cover={<img alt="Temporada actual" src={imgCurrent} style={{}}/>}
                     style={{
                     //width: "30vw",
+                    
                     }}
                     actions={[
-                        <Button className="btn" type='primary' size="large" shape="round" onClick={() => {navigate(`/estadisticas/S2/TABLA`)}}>
+                        <Button className="btn" type='primary' size="large" shape="round" onClick={() => {navigate(`/estadisticas/S2/TABLA%20C1`)}}>
                         <i className="animation"></i>
                         Ver
                         <i className="animation"></i>
