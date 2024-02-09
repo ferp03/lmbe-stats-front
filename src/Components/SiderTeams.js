@@ -44,7 +44,6 @@ const SiderTeams = memo(function SiderTeams({ season }) {
         theme="dark"
         style={{backgroundColor: "#282c34", border: "none"}}
         mode="inline" 
-        defaultSelectedKeys={'TABLA'}
         selectedKeys={[selectedKey]}
         >
           {items.map((item) => (
