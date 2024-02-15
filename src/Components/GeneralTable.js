@@ -33,7 +33,7 @@ const GeneralTable = ({ tabla, season }) => {
     const columns = [
         { title: "Posición", dataIndex: 0, sorter: (a,b) => a[0] - b[0], sortDirections: ['descend', 'ascend'] },
         { title: "Equipo", dataIndex: 1, render: (text, record) => (
-            <div style={{color: "blue", cursor: "pointer"}} onClick={() => navigate(`/estadisticas/${season}/${text}`)}>{text}</div>)},
+            <div style={{color: "blue", cursor: "pointer",textDecoration: "underline"}} onClick={() => navigate(`/estadisticas/${season}/${text}`)}>{text}</div>)},
         { title: "PG", dataIndex: 2, sorter: (a,b) => a[2] - b[2], sortDirections: ['descend', 'ascend'] },
         { title: "PJ", dataIndex: 3, sorter: (a,b) => a[3] - b[3], sortDirections: ['descend', 'ascend'] },
         { title: "V", dataIndex: 4, sorter: (a,b) => a[4] - b[4], sortDirections: ['descend', 'ascend'] },
@@ -61,14 +61,14 @@ const GeneralTable = ({ tabla, season }) => {
         )
     };
 
-function ContentPrincipal() {
-    return (
-        <div>
-            <p>¡Aquí podrás ver las estadisticas personalizadas de cada equipo y sus jugadores! Tomamos en cuenta puntos, rebotes, asistencias y triples de cada partido.</p> 
-            <p>Has click en el botón <MenuUnfoldOutlined /> para poder descubrir los nuestros equipos y jugadores.</p>
-        </div>
-        );
-    };   
+// function ContentPrincipal() {
+//     return (
+//         <div>
+//             <p>¡Aquí podrás ver las estadisticas personalizadas de cada equipo y sus jugadores! Tomamos en cuenta puntos, rebotes, asistencias y triples de cada partido.</p> 
+//             <p>Has click en el botón <MenuUnfoldOutlined /> para poder descubrir los nuestros equipos y jugadores.</p>
+//         </div>
+//         );
+//     };   
 
     return(
         <Layout 
