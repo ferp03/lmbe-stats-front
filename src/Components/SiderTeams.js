@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from "react";
-import { Layout, Menu, Button, Tooltip } from "antd";
+import { Layout, Menu, Button } from "antd";
 import { useNavigate } from "react-router-dom";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { RightCircleOutlined, LeftCircleOutlined } from "@ant-design/icons";
 import "./Components.css";
 
 const { Sider } = Layout;
@@ -31,14 +31,15 @@ const SiderTeams = memo(function SiderTeams({ season }) {
 
   return (
     <Layout
-    style={{height: "100hv"}}>
-      <Sider
-      trigger={null}
-      collapsible collapsed={collapsed}
-      breakpoint="lg"
-      collapsedWidth="0"
-      style={{backgroundColor: "#282c34", height: "100%", transitionDuration: "0.4s", transitionDelay: clicked ? "0.2s" : "0.0s"}}
-      >
+    //Al agregar el maxWidth, la tabla ya no se hace resize o al abrir el sider
+    style={{height: "100hv", maxWidth:"0vw", zIndex: 2}}>
+          <Sider
+          trigger={null}
+          collapsible collapsed={collapsed}
+          breakpoint="lg"
+          collapsedWidth="0"
+          style={{backgroundColor: "#282c34", height: "100%", transitionDuration: "0.4s", transitionDelay: clicked ? "0.2s" : "0.0s"}}
+          >
         <div/>
         <Menu 
         theme="dark"
@@ -61,26 +62,38 @@ const SiderTeams = memo(function SiderTeams({ season }) {
           ))}
         </Menu>
       </Sider>
-      {collapsed ? (
-      <Tooltip placement="right" title="Ver equipos">
-        <Button 
+      <div style={{ //Div para el background del botón de colapsar
+        backgroundColor: "#282c34", 
+        padding: "0.5rem", 
+        borderRadius: '0 0 10px 0', 
+        display: "flex", 
+        alignItems: "center", 
+        justifyContent: "center",
+        position: "relative",
+        height: "40px", 
+        width: "60px"
+        }}>
+        <div style={{height: "40px", display: "flex", alignItems: "center"}}>
+        {collapsed ? (
+          <Button 
+            type="text"
+            icon={<RightCircleOutlined style={{fontSize: "24px", color: "white"}}/>}
+            onClick={() =>{
+              setCollapsed(!collapsed);
+              setClicked(false);
+            }}
+            title="Ver estadisticas"
+            />
+        ) : (
+          <Button 
           type="text"
-          icon={<MenuUnfoldOutlined style={{fontSize: "22px"}}/>}
-          onClick={() =>{
-            setCollapsed(!collapsed);
-            setClicked(false);
-          }}
+          icon={<LeftCircleOutlined style={{fontSize: "24px", color: "white"}}/>}
+          onClick={() => setCollapsed(!collapsed)}
           title="Ver estadisticas"
-         />
-      </Tooltip>
-      ) : (
-      <Button 
-        type="text"
-        icon={<MenuFoldOutlined style={{fontSize: "22px"}}/>}
-        onClick={() => setCollapsed(!collapsed)}
-        title="Ver estadisticas"
-      />
-)}
+          />
+          )}
+        </div>
+      </div>
     </Layout>
   );
 });
