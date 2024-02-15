@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
-import { InstagramOutlined, FacebookOutlined, WhatsAppOutlined, MailOutlined } from "@ant-design/icons";
+import { InstagramOutlined, FacebookOutlined, MailOutlined } from "@ant-design/icons";
 import './Home.css';
 
 const Contacto = () => {
