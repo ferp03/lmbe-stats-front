@@ -53,7 +53,7 @@ const Content = () => {
           </ul>
         </div>
 
-        <div>
+        <div style={{paddingBottom: "2rem"}}>
           <h3>¿Cómo Participar?</h3>
           <Button className="btn" type='primary' size="large" shape="round" onClick={handleButtonClick}>
             <i className="animation"></i>
@@ -71,7 +71,7 @@ function Home(){
   return(
     <Layout>
       <Content />
-      <Map />
+      {/* <Map /> */}
     </Layout>
   );
 }
