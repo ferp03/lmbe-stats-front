@@ -32,7 +32,7 @@ const SiderTeams = memo(function SiderTeams({ season }) {
   return (
     <Layout
     //Al agregar el maxWidth, la tabla ya no se hace resize o al abrir el sider
-    style={{height: "100hv", maxWidth:"0vw", zIndex: 2}}>
+    style={{height: "100hv",maxWidth: "0vw", zIndex: 2}}>
           <Sider
           trigger={null}
           collapsible collapsed={collapsed}

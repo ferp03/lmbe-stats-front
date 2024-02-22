@@ -53,7 +53,14 @@ function Buttons({inLine=false}){
         
     ]
 
-    const selectedKey = items.find(item => item.link === location.pathname)?.key;
+    //Busca como empieza el location pathname y lo compara con los links de mis items. Como Sobre nosotros empieza igual que todos, 
+    //se agrega una condicion que checa si el item link es / y pathname no es para que no siempre se eliga el key del primer item
+    const selectedKey = items.find(item => {
+        if(item.link === '/' && location.pathname !== '/'){
+            return false;
+        }
+        return location.pathname.startsWith(item.link);
+    })?.key;
 
     return(
         <Menu 
